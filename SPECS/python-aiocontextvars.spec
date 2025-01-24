@@ -27,7 +27,7 @@
 # Have a look into your upstream's setup.py or setup.cfg, they do the same.
 Name:           python-aiocontextvars
 Version:        0.2.2
-Release:        %{?xsrel}%{?dist}
+Release:        %{?xsrel}.1%{?dist}
 Summary:        Asyncio support for PEP-567 contextvars backport
 License:        BSD-3-Clause
 Group:          Development/Languages/Python
@@ -35,10 +35,12 @@ URL:            https://github.com/fantix/aiocontextvars
 Source0: aiocontextvars-0.2.2.tar.gz
 #BuildRequires:  python3-contextvars
 BuildRequires:  python3-setuptools
-BuildRequires:  fdupes
+#BuildRequires:  fdupes
 BuildRequires:  python3-devel
 BuildRequires:  python-rpm-macros
 #BuildArch:      noarch
+
+Requires:  python3-contextvars
 
 %description
 In Python 3.5 and 3.6, this package added asyncio support to the PEP-567 backport
@@ -80,6 +82,10 @@ find %{buildroot}%{python_sitelib}/aiocontextvars
 
 
 %changelog
+* Fri Jan 24 2025 Yann Dirson <yann.dirson@vates.tech> - 0.2.2-3.1
+- Add missing Requires: python3-contextvars
+- Drop unused BuildRequires: fdupes
+
 * Mon Aug 19 2024 Marcus Granado <marcus.granado@cloud.com> - 0.2.2-3
 - Bump release and rebuild
 
