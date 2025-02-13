@@ -27,7 +27,7 @@
 %endif
 Name:           python-aiocontextvars
 Version:        0.2.2
-Release:        1.3
+Release:        1.9
 Summary:        Asyncio support for PEP-567 contextvars backport
 License:        BSD-3-Clause
 Group:          Development/Languages/Python
